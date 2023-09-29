@@ -1,0 +1,15 @@
+﻿@model Lab8a_MVC.Models.Phone
+
+
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => Model.PhoneNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Model.OwnerName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Update", new { id = Model.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+    </td>
+</tr>
