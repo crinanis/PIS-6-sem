@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phones Dictionary</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @if (IsSectionDefined("head"))
+    {
+        @RenderSection("head")
+    }
+    else
+    {
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle btn btn-primary" data-toggle="collapse" data-target=".navbar-collapse" style="width: 15px; height: 15px;"></button>
+                    @Html.ActionLink("Phones Dictionary", "Index", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Add phone", "Add")</li>
+                        <li>@Html.ActionLink("Update phone", "Update")</li>
+                        <li>@Html.ActionLink("Delete phone", "Delete")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            @if (IsSectionDefined("footer"))
+            {
+                @RenderSection("footer")
+            }
+            else
+            {
+                <p>&copy; @DateTime.Now.Year - crinanis</p>
+            }
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
