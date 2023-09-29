@@ -1,0 +1,38 @@
+﻿@using lab3;
+
+@{
+    Layout = null;
+    List<TelephoneBook> book = ViewBag.TelephoneBook;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>surname</th>
+                    <th>phone number</th>
+                </tr>
+            </thead>
+            @foreach (TelephoneBook row in book)
+            {
+                <tr>
+                    <td>@row.id</td>
+                    <td>@row.surname</td>
+                    <td>@row.phoneNumber</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <h5> <a href="~/Dict/Add"> Add </a></h5>
+    <h5> <a href="~/Dict/Update"> Update </a></h5>
+    <h5> <a href="~/Dict/Delete"> Delete </a></h5>
+</body>
+</html>
