@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Bstu Page";
+}
+
+<div class="jumbotron">
+    <a href="/fit">/FIT</a>
+    <a href="/flt">/FLT</a>
+    <a href="/fie">/FIE</a>
+
+    @if ((bool)ViewBag.isAdmin)
+    {
+        <a href="/config">Admin</a>
+    }
+</div>
+
+<div class="row">
+
+</div>
